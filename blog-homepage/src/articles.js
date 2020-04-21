@@ -1,36 +1,29 @@
 import React from 'react';
-import { PropTypes } from 'prop-types';
-
+import PropTypes from 'prop-types';
+import Author from './author.js'
  
 
 class Articles extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            articleObj: PropTypes.object
-
-        }
+  
     }
 
     render() {
-        const { image } = this.props.data;
-        const { title } = this.props.data;
-        const { description } = this.props.data;
-
+        const { image, title, description, author, postedDate, minutesToRead } = this.props.data;
 
         return (
-            <div class="card">
-            <tr>
-            <img class="img" src={ image } alt={ title } height='40%' width='40%' />
-            </tr> 
-            <tr> 
-              <div class="column">
-                <div class="title"> <p>{ title }</p></div>
-                <div class="description"> <p>{ description }</p></div>
-              </div>
-            </tr>
-              
-
+            <div className="card">
+          
+            <img className="img" src={ image } alt={ title } height='40%' width='40%' />
+         
+              <div className="column">
+                <div className="title"> <p>{ title }</p></div>
+                <div className="description"> <p>{ description }</p></div>
+                {/* <img class="authorImage" src={author.image}></img> */}
+                {/* <div class="author">{ author.name} </div> */}
+                <Author image={author.image} name={author.name} postedDate={postedDate} minutesToRead={minutesToRead} />
+            </div>
             </div>
             
         );

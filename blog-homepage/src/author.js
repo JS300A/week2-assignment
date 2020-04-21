@@ -1,38 +1,31 @@
 import React from 'react';
-import { PropTypes } from 'prop-types';
 
-class Author extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            authorObj: PropTypes.object
+ 
 
-        };
-    }
+const Author = (props) => {
+       let d = new Date(props.postedDate) 
 
-    render() { 
-        const { image } = this.props.data.author;
-        const { name } = this.props.data.author;
-
-
+       const monthNames = ["January", "February", "March", "April", "May", "June",
+       "July", "August", "September", "October", "November", "December"
+];
+       let month = monthNames[d.getMonth()]
+       let day = d.getDay()
+       
         return (
-            <div class="card">
-                <img class="img" src={ image } alt='' height='20%' width='20%' />
-            
-              <div class="column">
-                <div class="name"> <p>{ name }</p></div>
+            <div className="card">
+              <div>
+                <img className="authorImage" src={props.image}></img>
+                <div className="authorText">
+                  <div className="authorName"> {props.name} </div>
+                  <div className="postedDate"> {month} {day} </div>
+                  <div className="time to read"> {props.minutesToRead} Min Read </div>
+                </div>
               </div>
-
             </div>
-
             
         );
     }
-}
 
-Author.propTypes = {
-    image: PropTypes.string,
-    name: PropTypes.string
-}
+
 
 export default Author;

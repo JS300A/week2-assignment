@@ -1,36 +1,33 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
+import Author from './author.js'
 
  
 
 class MissedArticles extends React.Component {
     
-    static propTypes = {
-        missedObj: PropTypes.object
-    }
-    
+        constructor(props) {
+            super(props);
+      
+        }
     
     render() {
-        const { image } = this.props.data;
-        const { title } = this.props.data;
-        const { description } = this.props.data;
+        const { image, title, description, author, postedDate, minutesToRead } = this.props.data;
+
 
 
         return (
-            <div class="card">
-            <tr>
-                <img class="img" src={ image } alt={ title } height='40%' width='40%' />
-            </tr>
-            <tr>
-            <td>
-              <div class="column">
-                <div class="title"> <p>{ title }</p></div>
-                <div class="description"> <p>{ description }</p></div>
+            <div className="card">
+            
+                <img className="img" src={ image } alt={ title } height='40%' width='40%' />
+            
+              <div className="column">
+                <div className="title"> <p>{ title }</p></div>
+                <div className="description"> <p>{ description }</p></div>
+                <Author image={author.image} name={author.name} postedDate={postedDate} minutesToRead={minutesToRead} />    
               </div>
-             </td>
-             </tr> 
+             
               
-
             </div>
             
         );
