@@ -37,7 +37,12 @@
   }
 }
 
-.img {
+.column {
+  float: right;
+}
+
+/*
+img {
   float: left;
 }
 
@@ -45,9 +50,7 @@
   float: right;
 }
 
-.column {
-  float: right;
-}
+
 
 .title {
   float: right;
@@ -72,3 +75,4 @@
   height: 200px;
   width: 400px;
 }
+*/

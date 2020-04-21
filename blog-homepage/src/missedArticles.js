@@ -3,15 +3,13 @@ import { PropTypes } from 'prop-types';
 
  
 
-class Missed extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-
-
-        }
+class MissedArticles extends React.Component {
+    
+    static propTypes = {
+        missedObj: PropTypes.object
     }
-
+    
+    
     render() {
         const { image } = this.props.data;
         const { title } = this.props.data;
@@ -20,13 +18,17 @@ class Missed extends React.Component {
 
         return (
             <div class="card">
+            <tr>
                 <img class="img" src={ image } alt={ title } height='40%' width='40%' />
-            
+            </tr>
+            <tr>
+            <td>
               <div class="column">
                 <div class="title"> <p>{ title }</p></div>
                 <div class="description"> <p>{ description }</p></div>
               </div>
-              
+             </td>
+             </tr> 
               
 
             </div>
@@ -35,10 +37,10 @@ class Missed extends React.Component {
     }
 }
 
-Missed.propTypes = {
+MissedArticles.propTypes = {
     image: PropTypes.string,
     title: PropTypes.string,
     description: PropTypes.string
 }
 
-export default Missed;
+export default MissedArticles;

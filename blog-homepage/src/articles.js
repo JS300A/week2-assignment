@@ -7,7 +7,7 @@ class Articles extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            articleObj: PropTypes.object
 
         }
     }
@@ -20,13 +20,15 @@ class Articles extends React.Component {
 
         return (
             <div class="card">
-                <img class="img" src={ image } alt={ title } height='40%' width='40%' />
-            
+            <tr>
+            <img class="img" src={ image } alt={ title } height='40%' width='40%' />
+            </tr> 
+            <tr> 
               <div class="column">
                 <div class="title"> <p>{ title }</p></div>
                 <div class="description"> <p>{ description }</p></div>
               </div>
-              
+            </tr>
               
 
             </div>
